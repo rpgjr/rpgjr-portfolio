@@ -6,14 +6,14 @@ export const highlights: Highlight[] = [
     title: 'Payment provider integrations',
     before: 'Merchants had a limited set of payment methods.',
     after: 'Integrated multiple third-party providers over REST, adding methods for merchants, with API docs and Postman collections for each.',
-    stack: ['Java 17', 'Spring Boot', 'REST', 'Postman'],
+    stack: ['Java', 'Spring Boot', 'REST', 'Postman'],
   },
   {
     company: 'Finyon Global',
     title: 'Merchant-level processor blocking',
     before: 'Blocking a processor for one merchant meant a code change and a deploy. Retries could silently bypass the block.',
     after: 'Operations block it themselves, instantly, and the rule holds across every routing and fallback path.',
-    stack: ['Java 17', 'Spring Boot', 'MySQL', 'Mockito'],
+    stack: ['Java', 'Spring Boot', 'MySQL', 'Mockito'],
   },
   {
     company: 'Finyon Global',
@@ -27,14 +27,14 @@ export const highlights: Highlight[] = [
     title: 'Bank-level payout exclusions',
     before: 'A bank a processor could not settle with was found only after the provider rejected the payout.',
     after: 'Operations exclude banks per processor. The failure is prevented upstream and enforced on every retry path.',
-    stack: ['Java 17', 'Spring Boot', 'MySQL'],
+    stack: ['Java', 'Spring Boot', 'MySQL'],
   },
   {
     company: 'Finyon Global',
     title: 'Processor restrictions and industry eligibility',
     before: 'Payouts could be routed to incompatible or unauthorized processors.',
     after: 'Eligibility rules stop them before they reach production.',
-    stack: ['Java 17', 'Spring Boot'],
+    stack: ['Java', 'Spring Boot'],
   },
   {
     company: 'Finyon Global',

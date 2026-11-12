@@ -8,19 +8,19 @@ export const skillGroups: SkillGroup[] = [
     title: 'Backend',
     blurb: 'The server side: business rules, APIs and connections to other systems.',
     icon: 'srv',
-    skills: [w('Java 17'), w('Spring Boot'), w('Java EE'), w('Hibernate'), w('REST APIs'), w('Mockito tests'), s('PHP Laravel')],
+    skills: [w('Java'), w('Spring Boot'), w('Java EE'), w('Hibernate'), w('REST APIs'), w('Mockito tests'), s('PHP Laravel')],
   },
   {
     title: 'Frontend',
     blurb: 'The screens people click through: forms, tables and dashboards.',
     icon: 'lay',
-    skills: [w('React'), w('TypeScript'), w('Vue.js'), w('Tailwind CSS'), w('Bootstrap'), s('Laravel Livewire')],
+    skills: [w('React'), w('TypeScript'), w('Vue.js'), w('CSS'), s('Laravel Livewire')],
   },
   {
     title: 'Data and cloud',
     blurb: 'Where information is stored and how applications are hosted.',
     icon: 'db',
-    skills: [w('MySQL'), w('Stored procedures'), w('AWS EC2'), w('WildFly server'), w('Salesforce sync'), w('Dynamics CRM sync')],
+    skills: [w('MySQL'), w('AWS EC2'), w('WildFly Server')],
   },
   {
     title: 'Ways of working',

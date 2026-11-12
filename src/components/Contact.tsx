@@ -31,15 +31,21 @@ export function Contact() {
       <Reveal className="ct">
         <div>
           <span className="label">contact</span>
-          <h2 style={{ marginTop: 12 }}>Hiring for backend or full-stack?</h2>
-          <p>I am a junior engineer with production payments experience and a habit of removing manual work. Send the role and the stack.</p>
+          <h2 style={{ marginTop: 12 }}>Let's get in touch</h2>
+          <p>Email me or message me on LinkedIn about a role, a project or a question. I would be glad to hear from you.</p>
           <div className="csoc">
-            <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub profile"><Icon name="gh" /></a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><Icon name="in" /></a>
+            <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub profile">
+              <Icon name="gh" />
+              <span>GitHub</span>
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+              <Icon name="in" />
+              <span>LinkedIn</span>
+            </a>
           </div>
         </div>
         <div>
-          <div className="mail">
+          <div className="mail email">
             <code ref={emailRef}>{profile.email}</code>
             <button type="button" className="cp" onClick={copy}>
               <Icon name="copy" />
@@ -55,6 +61,7 @@ export function Contact() {
                 </a>
                 <a className="mailto o ico" href={profile.resumeUrl} download="Rodrigo-Geneta-Resume.pdf" aria-label="Download resume">
                   <Icon name="dl" />
+                  <span>Download</span>
                 </a>
               </>
             )}

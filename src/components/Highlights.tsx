@@ -3,13 +3,19 @@ import { companyFilters, companyMonogram, highlights, VISIBLE_AT_FIRST } from '.
 import type { Highlight } from '../data/types'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 import { Chips } from './Chips'
+import { HighlightModal } from './HighlightModal'
 import { Icon } from './Icon'
 import { Reveal } from './Reveal'
 import { SwipeHint } from './SwipeHint'
 
-function Card({ item, delay }: { item: Highlight; delay: number }) {
+const SHOWN_TAGS = 3
+
+function Card({ item, delay, onOpen }: { item: Highlight; delay: number; onOpen: (h: Highlight) => void }) {
+  const tags = item.stack.slice(0, SHOWN_TAGS)
+  const more = item.stack.length - tags.length
   return (
-    <article className="lc" style={{ '--j': delay } as React.CSSProperties}>
+    <article className="lc click" style={{ '--j': delay } as React.CSSProperties}>
+      <button type="button" className="card-hit" aria-label={`Open details for ${item.title}`} onClick={() => onOpen(item)} />
       <header>
         <span className="co">
           <span className="mono-b">{companyMonogram[item.company]}</span>
@@ -23,7 +29,7 @@ function Card({ item, delay }: { item: Highlight; delay: number }) {
             <Icon name="x" />
             <div>
               <small>before</small>
-              {item.before}
+              <span className="cl2">{item.before}</span>
             </div>
           </div>
         )}
@@ -31,15 +37,20 @@ function Card({ item, delay }: { item: Highlight; delay: number }) {
           <Icon name="ok" />
           <div>
             <small>{item.before ? 'after' : 'delivered'}</small>
-            {item.after}
+            <span className="cl3">{item.after}</span>
           </div>
         </div>
       </div>
       <div className="stk">
-        {item.stack.map((s) => (
-          <span key={s} className="tag">{s}</span>
+        {tags.map((t) => (
+          <span key={t} className="tag">{t}</span>
         ))}
+        {more > 0 && <span className="tag">+{more}</span>}
       </div>
+      <button type="button" className="vm hvm" onClick={() => onOpen(item)}>
+        View more
+        <Icon name="chev" className="rot-r" />
+      </button>
     </article>
   )
 }
@@ -47,6 +58,7 @@ function Card({ item, delay }: { item: Highlight; delay: number }) {
 export function Highlights() {
   const [company, setCompany] = useState<(typeof companyFilters)[number]>('All')
   const [showAll, setShowAll] = useState(false)
+  const [opened, setOpened] = useState<Highlight | null>(null)
   const phone = useMediaQuery('(max-width: 700px)')
 
   const list = highlights.filter((h) => company === 'All' || h.company === company)
@@ -75,7 +87,7 @@ export function Highlights() {
       />
       <div className="led">
         {first.map((h) => (
-          <Card key={h.title} item={h} delay={0} />
+          <Card key={h.title} item={h} delay={0} onOpen={setOpened} />
         ))}
       </div>
       {hasMore && (
@@ -83,7 +95,7 @@ export function Highlights() {
           <div>
             <div className="led">
               {rest.map((h, i) => (
-                <Card key={h.title} item={h} delay={i} />
+                <Card key={h.title} item={h} delay={i} onOpen={setOpened} />
               ))}
             </div>
           </div>
@@ -97,6 +109,7 @@ export function Highlights() {
           </button>
         </div>
       )}
+      <HighlightModal item={opened} onClose={() => setOpened(null)} />
     </section>
   )
 }
