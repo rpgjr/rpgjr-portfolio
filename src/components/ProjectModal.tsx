@@ -43,7 +43,7 @@ export function ProjectModal({ project, onClose }: { project: Project | null; on
               <figure>
                 <div className="wbar" aria-hidden="true">
                   <i /><i /><i />
-                  <span>{(project.live ?? project.repos[0].url).replace('https://', '')}</span>
+                  <span>{(project.live ?? project.repos[0]?.url ?? 'in development').replace('https://', '')}</span>
                 </div>
                 <div className="th2 big" aria-hidden="true">
                   <CodeArt art={project.art} />

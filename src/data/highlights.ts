@@ -70,7 +70,7 @@ export const highlights: Highlight[] = [
   },
   {
     company: 'School',
-    title: 'PUP TAPS Alumni Portal',
+    title: 'PUPT APS',
     after: 'Capstone: a portal that tracks whether PUP graduates work in a field aligned with their course and holds the forms for document requests and clearances. Designed the MySQL schema, built the interface with Laravel Livewire and was the main technical contact for the client.',
     stack: ['PHP Laravel', 'Livewire', 'MySQL'],
   },

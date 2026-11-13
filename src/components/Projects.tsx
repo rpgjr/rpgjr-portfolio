@@ -35,7 +35,7 @@ const SHOWN_TAGS = 4
 
 function Card({ project, index, match, onOpen }: { project: Project; index: number; match: boolean; onOpen: (p: Project) => void }) {
   const { gone, fade } = useFilterPhase(match)
-  const bar = (project.live ?? project.repos[0].url).replace('https://', '')
+  const bar = (project.live ?? project.repos[0]?.url ?? 'in development').replace('https://', '')
   // Every card opens the details window
   const opens = true
   const tags = project.stack.slice(0, SHOWN_TAGS)
@@ -140,7 +140,9 @@ export function Projects() {
         <h2>Things I built</h2>
         <p className="muted">One featured build and smaller ones from my own repositories. Each card takes a screenshot and shows whether it is deployed.</p>
       </Reveal>
-      <Chips options={projectFilters} value={filter} label="Filter projects" onChange={setFilter} />
+      {new Set(projects.map((p) => p.kind)).size > 1 && (
+        <Chips options={projectFilters} value={filter} label="Filter projects" onChange={setFilter} />
+      )}
       {featured.map((p, i) => (
         <div key={p.title} className="pj-feat">
           <Card project={p} index={i} match={matches(p)} onOpen={setOpened} />

@@ -12,11 +12,35 @@ const old = 'https://github.com/rodrigogenetajr/'
  */
 export const projects: Project[] = [
   {
-    title: 'Piggie',
+    title: 'CARPS',
     kind: 'Full-stack',
     year: '2026',
     status: 'wip',
     featured: true,
+    description:
+      'A mobile app for groups travelling together. A host starts a session, friends join with a 6-character code, and everyone sees each other live on one shared map and follows the same route. Currently in development.',
+    bullets: [
+      'Join a session with a short code and a name, with no account to create.',
+      'See every friend live on a shared map, with last-seen times when someone drops off.',
+      'Only the host sets the destination, and everyone sees the same route line.',
+      'A Navigate button opens Google Maps so the group merges onto the host\'s road.',
+      'Travel modes for walking, motorcycle rides and car convoys, each with its own alerts.',
+    ],
+    stack: ['Flutter', 'Firebase', 'Google Maps'],
+    repos: [],
+    art: [
+      [['m', '// carps · travel together, live']],
+      [['k', 'session'], ['', '  AB12CD']],
+      [['k', 'members'], ['', '  live positions']],
+      [['k', 'route'], ['', '    host sets it, all follow']],
+      [['m', '// in development']],
+    ],
+  },
+  {
+    title: 'Piggie',
+    kind: 'Full-stack',
+    year: '2026',
+    status: 'wip',
     description:
       'A budget and expense tracker, split into a backend repository and a frontend repository. Currently in development, with the code not published yet.',
     stack: [],
@@ -68,7 +92,7 @@ export const projects: Project[] = [
     title: 'hophop',
     kind: 'Full-stack',
     year: '2026',
-    status: 'repo',
+    status: 'wip',
     description:
       'A job application tracker. It records each application and its status, and a page scraper with Gemini-assisted field mapping helps fill in details from a job posting.',
     bullets: [
@@ -85,14 +109,14 @@ export const projects: Project[] = [
       [['m', '// hophop · job application tracker']],
       [['k', 'GET'], ['', '  /api/applications']],
       [['k', 'POST'], ['', ' /api/site-mappings  '], ['m', '// scraper']],
-      [['m', '// status: applied · interview · offer']],
+      [['m', '// in development']],
     ],
   },
   {
-    title: 'PUP TAPS Alumni Portal',
+    title: 'PUPT APS',
     kind: 'Full-stack',
     year: '2023',
-    status: 'tbd',
+    status: 'repo',
     description:
       'Capstone at Polytechnic University of the Philippines, Taguig. A portal for PUP alumni and graduating students that keeps their information, forms and requests in one place. I was the full-stack developer and the main technical contact for the client.',
     bullets: [
@@ -115,75 +139,6 @@ export const projects: Project[] = [
       [['k', 'php'], ['', ' artisan serve']],
       [['m', '// courses · alumni · forms · news']],
       [['k', 'wire:model.live'], ['', '='], ['s', '"search"']],
-    ],
-  },
-  {
-    title: 'React To-do List',
-    kind: 'Frontend',
-    year: '2024',
-    status: 'live',
-    live: 'https://simple-todolist-rod.netlify.app/',
-    image: '/projects/todo-home.jpg',
-    gallery: [
-      { src: '/projects/todo-home.jpg', alt: 'To-do app with a Get Things Done heading and a box to add a task', caption: 'Type a task and add it to the list' },
-    ],
-    description: 'Task list with add, edit and delete, built to practise state handling.',
-    bullets: ['Add a task from the input at the top.', 'Edit or delete each task with the icons beside it.'],
-    stack: ['React'],
-    repos: [{ label: 'Code', url: old + 'react-todolist-app' }],
-    art: [
-      [['k', 'const'], ['', ' [todos, set] = useState([]);']],
-      [['m', '// add · edit · delete']],
-    ],
-  },
-  {
-    title: 'React Weather App',
-    kind: 'Frontend',
-    year: '2024',
-    status: 'live',
-    live: 'https://simple-weatherapp-rod.netlify.app/',
-    image: '/projects/weather-home.jpg',
-    gallery: [
-      { src: '/projects/weather-home.jpg', alt: 'Weather app showing 24 degrees in London with humidity and wind speed', caption: 'Search a city and see its temperature, humidity and wind speed' },
-    ],
-    description: 'Search a city and see current conditions from a public weather API.',
-    bullets: ['Shows the temperature, humidity and wind speed for the city you search.'],
-    stack: ['React', 'REST API'],
-    repos: [{ label: 'Code', url: old + 'react-weather-app' }],
-    art: [
-      [['k', 'const'], ['', ' res = '], ['k', 'await'], ['', ' fetch(url);']],
-      [['k', 'const'], ['', ' { main } = '], ['k', 'await'], ['', ' res.json();']],
-      [['m', '// render temp, humidity']],
-    ],
-  },
-  {
-    title: 'Student CRUD',
-    kind: 'Full-stack',
-    year: '2024',
-    status: 'repo',
-    description: 'React front end with a Node API and MySQL for managing student records.',
-    stack: ['React', 'Node.js', 'MySQL'],
-    repos: [{ label: 'Code', url: old + 'Simple-Student-CRUD' }],
-    art: [
-      [['k', 'app'], ['', '.post('], ['s', '"/students"'], ['', ', (req,res) => {']],
-      [['', '  db.query(sql, values);']],
-      [['', '});']],
-      [['m', '// create · read · update · delete']],
-    ],
-  },
-  {
-    title: 'Employee CRUD',
-    kind: 'Backend',
-    year: '2024',
-    status: 'repo',
-    description: 'Java application for creating, reading, updating and deleting employee records.',
-    stack: ['Java'],
-    repos: [{ label: 'Code', url: old + 'EmployeeCrud' }],
-    art: [
-      [['k', 'public'], ['', ' Employee save(Employee e) {']],
-      [['', '  '], ['k', 'return'], ['', ' repo.save(e);']],
-      [['', '}']],
-      [['m', '// list · find · update · delete']],
     ],
   },
 ]
