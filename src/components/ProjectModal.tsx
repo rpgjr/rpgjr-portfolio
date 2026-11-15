@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Project } from '../data/types'
-import { CodeArt } from './CodeArt'
 import { Icon } from './Icon'
 
 /** Details window for a deployed project. Uses the native <dialog>, which traps focus and closes on Esc. */
@@ -41,22 +40,17 @@ export function ProjectModal({ project, onClose }: { project: Project | null; on
           <div className="modal-shots">
             {!current && (
               <figure>
-                <div className="wbar" aria-hidden="true">
-                  <i /><i /><i />
-                  <span>{(project.live ?? project.repos[0]?.url ?? 'in development').replace('https://', '')}</span>
-                </div>
                 <div className="th2 big" aria-hidden="true">
-                  <CodeArt art={project.art} />
+                  <div className="plate">
+                    <span className="plate-ini">{project.title.charAt(0)}</span>
+                    <span className="plate-meta">{project.stack.slice(0, 3).join(' · ') || project.kind}</span>
+                  </div>
                 </div>
-                <figcaption>No screenshots yet. This is the code the project is built around.</figcaption>
+                <figcaption>No screenshots yet.</figcaption>
               </figure>
             )}
             {current && (
               <figure>
-                <div className="wbar" aria-hidden="true">
-                  <i /><i /><i />
-                  <span>{project.live?.replace('https://', '')}</span>
-                </div>
                 <img key={current.src} src={current.src} alt={current.alt} />
                 <figcaption>{current.caption}</figcaption>
               </figure>

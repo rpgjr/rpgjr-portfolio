@@ -56,6 +56,35 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'Mirana',
+    kind: 'Full-stack',
+    year: '2026',
+    status: 'wip',
+    description:
+      'A ticket tracker for software teams. Projects have a Kanban board, tickets link to GitHub pull requests, and sign-in is protected with email codes. Currently in development.',
+    bullets: [
+      'Boards with draggable columns and tickets, plus a list view and ticket comments.',
+      'GitHub webhooks link pull requests to tickets, with signature checks on each delivery.',
+      'Sign-in with email one-time codes, trusted devices and password reset.',
+      'Project members and invites, with an activity history on every ticket.',
+    ],
+    image: '/projects/mirana-board.jpg',
+    gallery: [
+      { src: '/projects/mirana-board.jpg', alt: 'Mirana Kanban board with columns of tickets', caption: 'Board: tickets in columns, dragged between stages' },
+      { src: '/projects/mirana-list.jpg', alt: 'Mirana list view of project tickets', caption: 'List: the same tickets as a sortable list' },
+      { src: '/projects/mirana-ticket.jpg', alt: 'Mirana ticket detail with comments and linked pull requests', caption: 'Ticket: details, comments and linked pull requests' },
+      { src: '/projects/mirana-login.jpg', alt: 'Mirana sign-in form with email and password fields', caption: 'Sign-in: email and password, then an email code on a new device' },
+    ],
+    stack: ['Java', 'Spring Boot', 'MySQL', 'React', 'TypeScript', 'Docker'],
+    repos: [],
+    art: [
+      [['m', '// mirana · ticket tracker']],
+      [['k', 'POST'], ['', ' /api/github/webhook  '], ['m', '// PR links']],
+      [['k', 'table'], ['', ' ticket, board_column']],
+      [['m', '// in development']],
+    ],
+  },
+  {
     title: 'mepmep',
     kind: 'Full-stack',
     year: '2026',

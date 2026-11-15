@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { projectFilters, projects } from '../data/projects'
 import type { DeployStatus, Project } from '../data/types'
 import { Chips } from './Chips'
-import { CodeArt } from './CodeArt'
 import { Icon } from './Icon'
 import { ProjectModal } from './ProjectModal'
 import { Reveal } from './Reveal'
@@ -35,7 +34,6 @@ const SHOWN_TAGS = 4
 
 function Card({ project, index, match, onOpen }: { project: Project; index: number; match: boolean; onOpen: (p: Project) => void }) {
   const { gone, fade } = useFilterPhase(match)
-  const bar = (project.live ?? project.repos[0]?.url ?? 'in development').replace('https://', '')
   // Every card opens the details window
   const opens = true
   const tags = project.stack.slice(0, SHOWN_TAGS)
@@ -51,20 +49,16 @@ function Card({ project, index, match, onOpen }: { project: Project; index: numb
         <button type="button" className="card-hit" aria-label={`Open details for ${project.title}`} onClick={() => onOpen(project)} />
       )}
       <div className="win">
-        <div className="wbar" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-          <span>{bar}</span>
-        </div>
         <div className="th2" aria-hidden={project.image ? undefined : true}>
           <span className={`st ${project.status}`}>{statusLabel[project.status]}</span>
           {project.image ? (
             <img src={project.image} alt={`Screenshot of ${project.title}`} loading="lazy" />
           ) : (
-            <CodeArt art={project.art} />
+            <div className="plate">
+              <span className="plate-ini">{project.title.charAt(0)}</span>
+              <span className="plate-meta">{project.stack.slice(0, 3).join(' · ') || project.kind}</span>
+            </div>
           )}
-          {!project.image && project.featured && <span className="shot">screenshot goes here</span>}
         </div>
       </div>
       <div className="pb">
