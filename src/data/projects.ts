@@ -91,6 +91,7 @@ export const projects: Project[] = [
     status: 'live',
     live: 'https://mepmep.vercel.app',
     image: '/projects/mepmep-home.jpg',
+    video: { src: '/projects/mepmep-showcase.mp4', poster: '/projects/mepmep-home.jpg', caption: 'Showcase: sign up, browse, save to a list and watch' },
     gallery: [
       { src: '/projects/mepmep-home.jpg', alt: 'mepmep home page with a trending banner and a row of trending movies', caption: 'Home: a trending banner and rows of popular titles' },
       { src: '/projects/mepmep-movies.jpg', alt: 'mepmep movies page with genre and sort filters above a grid of posters', caption: 'Movies: browse by genre and sort order' },

@@ -598,3 +598,14 @@ html.locked{overflow:hidden}
 .plate-ini{position:absolute;right:14px;top:-14px;font:700 9rem/1 var(--display);color:var(--accent);opacity:.14;letter-spacing:-.04em;user-select:none}
 .plate-meta{position:relative;font:500 .86rem var(--ui);color:var(--muted)}
 .pc.feat .plate-ini{font-size:14rem;top:-24px}
+
+/* Showcase video: hover preview on the card, first item in the details window */
+.th2 .clip{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .3s;background:var(--term)}
+.pc.playing .th2 .clip{opacity:1}
+.pc.playing .th2 img{transform:none}
+.modal-shots figure video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#000}
+.thumbs button{position:relative}
+.thumbs button.is-video::after{content:"";position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:rgba(0,0,0,.65) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 7v10l8-5z'/%3E%3C/svg%3E") center/16px no-repeat}
+.modal-shots figure{flex:none}
+.thumbs{overflow-x:auto;padding-bottom:2px}
+.thumbs button{flex:0 0 calc((100% - 30px) / 4)}

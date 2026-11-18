@@ -19,7 +19,12 @@ export function ProjectModal({ project, onClose }: { project: Project | null; on
     return () => document.documentElement.classList.remove('locked')
   }, [project])
 
-  const gallery = project?.gallery ?? []
+  // The showcase video, when there is one, is the first item and sits beside the screenshots.
+  const clip = project?.video
+  const gallery: { src: string; alt: string; caption: string; video?: boolean }[] = [
+    ...(clip ? [{ src: clip.src, alt: `${project.title} showcase video`, caption: clip.caption, video: true }] : []),
+    ...(project?.gallery ?? []),
+  ]
   const current = gallery[shot]
 
   return (
@@ -51,15 +56,19 @@ export function ProjectModal({ project, onClose }: { project: Project | null; on
             )}
             {current && (
               <figure>
-                <img key={current.src} src={current.src} alt={current.alt} />
+                {current.video && clip ? (
+                  <video key={current.src} src={current.src} poster={clip.poster} controls autoPlay muted loop playsInline aria-label={current.alt} />
+                ) : (
+                  <img key={current.src} src={current.src} alt={current.alt} />
+                )}
                 <figcaption>{current.caption}</figcaption>
               </figure>
             )}
             {gallery.length > 1 && (
-              <div className="thumbs" role="group" aria-label="Screenshots">
+              <div className="thumbs" role="group" aria-label="Video and screenshots">
                 {gallery.map((g, i) => (
-                  <button key={g.src} type="button" aria-pressed={i === shot} aria-label={g.caption} onClick={() => setShot(i)}>
-                    <img src={g.src} alt="" loading="lazy" />
+                  <button key={g.src} type="button" aria-pressed={i === shot} aria-label={g.caption} className={g.video ? 'is-video' : undefined} onClick={() => setShot(i)}>
+                    <img src={g.video && clip ? clip.poster : g.src} alt="" loading="lazy" />
                   </button>
                 ))}
               </div>

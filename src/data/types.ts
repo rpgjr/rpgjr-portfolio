@@ -44,6 +44,12 @@ export interface Shot {
   caption: string
 }
 
+export interface Clip {
+  src: string
+  poster: string
+  caption: string
+}
+
 export interface Project {
   title: string
   kind: ProjectKind
@@ -62,6 +68,8 @@ export interface Project {
   image?: string
   /** Real screenshots shown in the details window. Only for projects that are live. */
   gallery?: Shot[]
+  /** Short showcase video. Plays muted over the card image on hover, and is the first item in the details window. */
+  video?: Clip
   art: Seg[][]
   featured?: boolean
 }

@@ -32,6 +32,37 @@ function useFilterPhase(match: boolean) {
 
 const SHOWN_TAGS = 4
 
+/** Muted preview clip that plays while the card is hovered or focused, and rewinds when it is left. */
+function HoverClip({ src, poster }: { src: string; poster: string }) {
+  const ref = useRef<HTMLVideoElement>(null)
+  useEffect(() => {
+    const v = ref.current
+    const card = v?.closest('.pc')
+    if (!v || !card) return
+    if (!matchMedia('(hover: hover)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const start = () => {
+      v.preload = 'auto'
+      v.play().then(() => card.classList.add('playing'), () => {})
+    }
+    const stop = () => {
+      card.classList.remove('playing')
+      v.pause()
+      v.currentTime = 0
+    }
+    card.addEventListener('pointerenter', start)
+    card.addEventListener('pointerleave', stop)
+    card.addEventListener('focusin', start)
+    card.addEventListener('focusout', stop)
+    return () => {
+      card.removeEventListener('pointerenter', start)
+      card.removeEventListener('pointerleave', stop)
+      card.removeEventListener('focusin', start)
+      card.removeEventListener('focusout', stop)
+    }
+  }, [])
+  return <video ref={ref} className="clip" src={src} poster={poster} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />
+}
+
 function Card({ project, index, match, onOpen }: { project: Project; index: number; match: boolean; onOpen: (p: Project) => void }) {
   const { gone, fade } = useFilterPhase(match)
   // Every card opens the details window
@@ -52,7 +83,10 @@ function Card({ project, index, match, onOpen }: { project: Project; index: numb
         <div className="th2" aria-hidden={project.image ? undefined : true}>
           <span className={`st ${project.status}`}>{statusLabel[project.status]}</span>
           {project.image ? (
-            <img src={project.image} alt={`Screenshot of ${project.title}`} loading="lazy" />
+            <>
+              <img src={project.image} alt={`Screenshot of ${project.title}`} loading="lazy" />
+              {project.video && <HoverClip src={project.video.src} poster={project.video.poster} />}
+            </>
           ) : (
             <div className="plate">
               <span className="plate-ini">{project.title.charAt(0)}</span>
