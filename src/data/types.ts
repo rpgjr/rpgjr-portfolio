@@ -48,6 +48,8 @@ export interface Clip {
   src: string
   poster: string
   caption: string
+  /** Width over height of the video, for example '16 / 9'. Stops letterbox bars and layout jumps. */
+  ratio: string
 }
 
 export interface Project {
