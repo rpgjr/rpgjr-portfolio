@@ -638,3 +638,6 @@ body{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg
 :root[data-theme="dark"] .mail button:not(.o),:root[data-theme="dark"] .mailto:not(.o),:root[data-theme="dark"] .ct .mail.email button.cp{background:var(--accent);color:var(--accent-ink)}
 /* NT-13 replaces the square-dot backdrop layer in both themes */
 .bg{display:none}
+
+/* Phone: repo buttons read Frontend / Backend so they fit on one line with Visit */
+@media (max-width:700px){.pl a .rl-x{display:none}.pl{gap:6px}.pl a,.pl span.off{gap:6px;padding:0 11px;font-size:.8rem}}
