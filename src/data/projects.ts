@@ -59,9 +59,10 @@ export const projects: Project[] = [
     title: 'Mirana',
     kind: 'Full-stack',
     year: '2026',
-    status: 'wip',
+    status: 'live',
+    live: 'https://rpgjr-mirana.vercel.app',
     description:
-      'A ticket tracker for software teams. Projects have a Kanban board, tickets link to GitHub pull requests, and sign-in is protected with email codes. Currently in development.',
+      'A ticket tracker for software teams. Projects have a Kanban board, tickets link to GitHub pull requests, and sign-in is protected with email codes.',
     bullets: [
       'Boards with draggable columns and tickets, plus a list view and ticket comments.',
       'GitHub webhooks link pull requests to tickets, with signature checks on each delivery.',
@@ -76,12 +77,15 @@ export const projects: Project[] = [
       { src: '/projects/mirana-login.jpg', alt: 'Mirana sign-in form with email and password fields', caption: 'Sign-in: email and password, then an email code on a new device' },
     ],
     stack: ['Java', 'Spring Boot', 'MySQL', 'React', 'TypeScript', 'Docker'],
-    repos: [],
+    repos: [
+      { label: 'Frontend', url: main + 'mirana-ui' },
+      { label: 'Backend', url: main + 'mirana' },
+    ],
     art: [
       [['m', '// mirana · ticket tracker']],
       [['k', 'POST'], ['', ' /api/github/webhook  '], ['m', '// PR links']],
       [['k', 'table'], ['', ' ticket, board_column']],
-      [['m', '// in development']],
+      [['m', '// live on vercel']],
     ],
   },
   {

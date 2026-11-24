@@ -136,7 +136,7 @@ export function ProjectModal({ project, onClose }: { project: Project | null; on
               {project.repos.map((r) => (
                 <a key={r.url} href={r.url} target="_blank" rel="noreferrer">
                   <Icon name="gh" />
-                  {r.label === 'Code' ? 'Code' : `${r.label} code`}
+                  {r.label === 'Code' ? 'Repository' : `${r.label} repository`}
                 </a>
               ))}
             </div>

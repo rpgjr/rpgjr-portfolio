@@ -44,7 +44,7 @@ export function Hero() {
         </ul>
         <div className="cta">
           <a className="btn p" href="#contact">
-            Get in touch <Icon name="arrow" />
+            Get in touch <Icon name="mail" />
           </a>
           <div className="soc">
             <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub profile">

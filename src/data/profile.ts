@@ -4,7 +4,7 @@ export const profile = {
   shortName: 'rodrigo-geneta',
   roleTags: ['Software Engineer', 'Java', 'Spring Boot', 'React', 'TypeScript'],
   summary:
-    'Over two years of production experience across Java and Spring Boot backends, React, TypeScript and Vue front ends, and MySQL. Most recently in payment provider integrations and internal operations tools.',
+    'Over two years of production experience across Java and Spring Boot backends, React, TypeScript and Vue front ends, and MySQL. Most recently in fintech, building payment provider integrations and the operations tools behind them.',
   points: [
     'Integrated multiple payment providers over REST APIs',
     'Built self-service tools to replace manual work and bootstrap processes',

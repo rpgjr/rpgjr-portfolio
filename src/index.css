@@ -15,23 +15,26 @@
 
 /* Dark-first engineer's portfolio. Hero = large portrait + name; bento highlights; role cards with key results; browser-frame project cards. Tokens follow the ui-ux-pro-max developer palette (slate navy + run-green). */
 :root{
-  --bg:#f5f5f6; --bg2:#ececee; --surface:#ffffff; --surface2:#f7f7f8; --fg:#131315; --muted:#56565c; --line:#dcdce0;
-  --accent:#d6246e; --accent-ink:#ffffff; --accent-soft:#fde6f1; --warn:#b45309; --warn-soft:#fbeedc;
-  --term:#0c0c0d; --term-fg:#f1f1f3; --term-muted:#8e8e95; --term-ok:#ffa6d2; --term-warn:#fbbf24;
-  --glow:rgba(214,36,110,.16); --shadow:0 24px 50px -28px rgba(21,16,26,.35);
+  --ct-a:#8a9ab4; --ct-t:#c5cddb; --ct-ink:#14181f;
+  --bg:#e9e6e7; --bg2:#dfdbdc; --surface:#f6f4f4; --surface2:#efecec; --fg:#2b2725; --muted:#5e5653; --line:#cdc7c8;
+  --accent:#4f5f7d; --accent-ink:#ffffff; --accent-soft:#dde2ea; --warn:#8a5a3c; --warn-soft:#ece0d8;
+  --term:#232020; --term-fg:#f1eeee; --term-muted:#a39b97; --term-ok:#c5cddb; --term-warn:#d9b08c;
+  --glow:rgba(79,95,125,.10); --shadow:0 24px 50px -28px rgba(43,39,37,.35);
   --display:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
   --body:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
 --ui:var(--body);
   --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0b0b0c; --bg2:#111112; --surface:#151516; --surface2:#1b1b1d; --fg:#f4f4f5; --muted:#a3a3a8; --line:#2a2a2e;
-  --accent:#ff7eb9; --accent-ink:#14040c; --accent-soft:#2b1421; --warn:#f59e0b; --warn-soft:#2a2112;
-  --glow:rgba(255,126,185,.2); --shadow:0 24px 50px -28px rgba(0,0,0,.8); color-scheme:dark}}
+  --bg:#252525; --bg2:#202020; --surface:#2e2e2e; --surface2:#3a3a3a; --fg:#cfcfcf; --muted:#a0a0a0; --line:#545454;
+  --accent:#8da0bf; --accent-ink:#14181f; --accent-soft:#2b3140; --warn:#d9a441; --warn-soft:#38332a;
+  --term:#1b1b1b; --term-fg:#cfcfcf; --term-muted:#8a8a8a; --term-ok:#8da0bf; --term-warn:#d9a441;
+  --glow:rgba(141,160,191,.16); --shadow:0 24px 50px -28px rgba(0,0,0,.7); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0b0b0c; --bg2:#111112; --surface:#151516; --surface2:#1b1b1d; --fg:#f4f4f5; --muted:#a3a3a8; --line:#2a2a2e;
-  --accent:#ff7eb9; --accent-ink:#14040c; --accent-soft:#2b1421; --warn:#f59e0b; --warn-soft:#2a2112;
-  --glow:rgba(255,126,185,.2); --shadow:0 24px 50px -28px rgba(0,0,0,.8); color-scheme:dark}
+  --bg:#252525; --bg2:#202020; --surface:#2e2e2e; --surface2:#3a3a3a; --fg:#cfcfcf; --muted:#a0a0a0; --line:#545454;
+  --accent:#8da0bf; --accent-ink:#14181f; --accent-soft:#2b3140; --warn:#d9a441; --warn-soft:#38332a;
+  --term:#1b1b1b; --term-fg:#cfcfcf; --term-muted:#8a8a8a; --term-ok:#8da0bf; --term-warn:#d9a441;
+  --glow:rgba(141,160,191,.16); --shadow:0 24px 50px -28px rgba(0,0,0,.7); color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);margin:0;padding-block:0 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
@@ -218,15 +221,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ct>*{min-width:0;position:relative}
 .ct h2{color:#f7f1f5}
 .ct p{color:#a3a3a8;margin-top:14px}
-.ct .label{color:#ffa6d2}
+.ct .label{color:var(--ct-t)}
 .mail{display:flex;gap:8px;flex-wrap:wrap}
 .mail+.mail{margin-top:10px}
 .mail code{flex:1 1 220px;display:flex;align-items:center;font:500 .88rem var(--mono);padding:0 16px;min-height:48px;border-radius:12px;background:rgba(148,163,184,.12);border:1px solid #34343a;overflow-wrap:anywhere}
-.mail button{display:inline-flex;gap:8px;align-items:center;min-height:48px;padding:0 18px;border-radius:12px;border:0;background:#ff7eb9;color:#14040c;font:600 .88rem var(--body)}
+.mail button{display:inline-flex;gap:8px;align-items:center;min-height:48px;padding:0 18px;border-radius:12px;border:0;background:var(--ct-a);color:var(--ct-ink);font:600 .88rem var(--body)}
 .mail button.o{background:transparent;color:#f7f1f5;border:1px solid #44444a}
 .csoc{display:flex;gap:10px;margin-top:22px}
 .csoc a{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;border:1px solid #44444a;color:#f7f1f5;transition:border-color .2s,color .2s,transform .2s}
-.csoc a:hover{border-color:#ff7eb9;color:#ffa6d2;transform:translateY(-2px)}
+.csoc a:hover{border-color:var(--ct-a);color:var(--ct-t);transform:translateY(-2px)}
 footer{font:400 0.84rem var(--ui);color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 .lc.cl{display:none}
@@ -295,7 +298,7 @@ footer{font:400 0.84rem var(--ui);color:var(--muted);display:flex;justify-conten
 .pb ul{list-style:disc}
 
 /* Contact: link-style buttons next to the copy button */
-.mailto{display:inline-flex;gap:8px;align-items:center;min-height:48px;padding:0 18px;border-radius:12px;background:#ff7eb9;color:#14040c;font:600 .88rem var(--body);text-decoration:none}
+.mailto{display:inline-flex;gap:8px;align-items:center;min-height:48px;padding:0 18px;border-radius:12px;background:var(--ct-a);color:var(--ct-ink);font:600 .88rem var(--body);text-decoration:none}
 .mailto.o{background:transparent;color:#f7f1f5;border:1px solid #44444a}
 
 /* Several roles at one employer share a card, split by a divider */
@@ -500,7 +503,7 @@ html.locked{overflow:hidden}
 /* Cleaner phone avatar ring, resume buttons, calmer contact buttons */
 .btn.icon{padding:0;width:48px;flex:none}
 .mail button.cp{background:transparent;color:#f7f1f5;border:1px solid #44444a}
-.mail button.cp:hover{border-color:#ff7eb9}
+.mail button.cp:hover{border-color:var(--ct-a)}
 .mail.actions{align-items:stretch}
 .mailto.ico{padding:0;width:48px;flex:none}
 @media (max-width:700px){
@@ -553,7 +556,7 @@ html.locked{overflow:hidden}
   .ct p{margin:2px 0 14px;font-size:.98rem}
   .ct .mail.email{grid-column:1/-1;grid-row:4;gap:10px}
   .ct .mail.email code{min-height:56px;font-size:.84rem}
-  .ct .mail.email button.cp{min-height:56px;background:#ff7eb9;color:#14040c;border-color:transparent;padding:0 18px}
+  .ct .mail.email button.cp{min-height:56px;background:var(--ct-a);color:var(--ct-ink);border-color:transparent;padding:0 18px}
   .ct .mail.actions .mailto:not(.ico){grid-row:5;grid-column:1;min-height:52px;background:transparent;color:#f7f1f5;border:1px solid #44444a}
   .ct .csoc a{grid-row:5;width:auto;min-height:52px;display:grid;place-items:center}
   .ct .csoc a:nth-child(1){grid-column:2}
@@ -625,3 +628,13 @@ html.locked{overflow:hidden}
 .lightbox .lb-nav{position:fixed;top:50%;margin-top:-22px;color:#111;background:#fff;border-color:#fff}
 .lightbox .lb-nav.prev{left:14px}
 .lightbox .lb-nav.next{right:14px}
+
+/* NT-13 Grain Vignette (both themes): film grain plus edge darkening over --bg */
+body{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E"),radial-gradient(ellipse at center,transparent 35%,color-mix(in oklab,var(--fg) 18%,transparent) 100%),var(--bg);background-attachment:fixed}
+/* Contact block keeps hardcoded pink in light theme; swap to palette accent in dark */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ct .label,:root:not([data-theme="light"]) .csoc a:hover{color:var(--accent)}:root:not([data-theme="light"]) .csoc a:hover,:root:not([data-theme="light"]) .mail button.cp:hover{border-color:var(--accent)}:root:not([data-theme="light"]) .mail button:not(.o),:root:not([data-theme="light"]) .mailto:not(.o),:root:not([data-theme="light"]) .ct .mail.email button.cp{background:var(--accent);color:var(--accent-ink)}}
+:root[data-theme="dark"] .ct .label,:root[data-theme="dark"] .csoc a:hover{color:var(--accent)}
+:root[data-theme="dark"] .csoc a:hover,:root[data-theme="dark"] .mail button.cp:hover{border-color:var(--accent)}
+:root[data-theme="dark"] .mail button:not(.o),:root[data-theme="dark"] .mailto:not(.o),:root[data-theme="dark"] .ct .mail.email button.cp{background:var(--accent);color:var(--accent-ink)}
+/* NT-13 replaces the square-dot backdrop layer in both themes */
+.bg{display:none}

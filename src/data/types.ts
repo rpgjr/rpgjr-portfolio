@@ -1,4 +1,4 @@
-export type Company = 'Finyon Global' | 'Civicom' | 'School'
+export type Company = 'Finyon Global' | 'Civicom'
 
 export interface Highlight {
   company: Company

@@ -32,7 +32,7 @@ export const skillGroups: SkillGroup[] = [
 
 export const workingAgreement = [
   { icon: 'test', title: 'Change ships with proof', text: 'Mockito unit tests for new features, bug fixes and integrations, and Postman collections with request and response examples.' },
-  { icon: 'doc', title: 'Knowledge leaves my head', text: 'Every payment provider integration gets API specs, config steps and usage examples, so the next person can maintain it.' },
+  { icon: 'doc', title: 'Knowledge leaves my head', text: 'Every integration gets API specs, config steps and usage examples, so the next person can maintain it.' },
   { icon: 'team', title: 'Direct with external teams', text: 'I worked straight with payment providers to align specs and debug integration problems end to end.' },
   { icon: 'branch', title: 'Small, reviewable changes', text: 'Feature branches, code reviews on both sides, agile sprints and incremental delivery.' },
 ] as const

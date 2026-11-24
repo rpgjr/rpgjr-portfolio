@@ -68,19 +68,12 @@ export const highlights: Highlight[] = [
     after: 'Designed and built APIs for efficient data fetching and integration between separate internal systems.',
     stack: ['Java EE', 'Hibernate', 'REST'],
   },
-  {
-    company: 'School',
-    title: 'PUPT APS',
-    after: 'Capstone: a portal that tracks whether PUP graduates work in a field aligned with their course and holds the forms for document requests and clearances. Designed the MySQL schema, built the interface with Laravel Livewire and was the main technical contact for the client.',
-    stack: ['PHP Laravel', 'Livewire', 'MySQL'],
-  },
 ]
 
 export const companyMonogram: Record<string, string> = {
   'Finyon Global': 'FG',
   Civicom: 'CV',
-  School: 'PUP',
 }
 
-export const companyFilters = ['All', 'Finyon Global', 'Civicom', 'School'] as const
+export const companyFilters = ['All', 'Finyon Global', 'Civicom'] as const
 export const VISIBLE_AT_FIRST = 6

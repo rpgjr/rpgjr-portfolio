@@ -30,7 +30,7 @@ export function Contact() {
     <section className="sec" id="contact">
       <Reveal className="ct">
         <div>
-          <span className="label">contact</span>
+          <span className="label">contacts</span>
           <h2 style={{ marginTop: 12 }}>Let's get in touch</h2>
           <p>Email me or message me on LinkedIn about a role, a project or a question. I would be glad to hear from you.</p>
           <div className="csoc">
@@ -61,7 +61,7 @@ export function Contact() {
                 </a>
                 <a className="mailto o ico" href={profile.resumeUrl} download="Rodrigo-Geneta-Resume.pdf" aria-label="Download resume">
                   <Icon name="dl" />
-                  <span>Download</span>
+                  <span>Download resume</span>
                 </a>
               </>
             )}
