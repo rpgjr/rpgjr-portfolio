@@ -15,6 +15,7 @@
 
 /* Dark-first engineer's portfolio. Hero = large portrait + name; bento highlights; role cards with key results; browser-frame project cards. Tokens follow the ui-ux-pro-max developer palette (slate navy + run-green). */
 :root{
+  color-scheme:light;
   --ct-a:#8a9ab4; --ct-t:#c5cddb; --ct-ink:#14181f;
   --bg:#e9e6e7; --bg2:#dfdbdc; --surface:#f6f4f4; --surface2:#efecec; --fg:#2b2725; --muted:#5e5653; --line:#cdc7c8;
   --accent:#4f5f7d; --accent-ink:#ffffff; --accent-soft:#dde2ea; --warn:#8a5a3c; --warn-soft:#ece0d8;
